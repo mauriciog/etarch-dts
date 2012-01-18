@@ -14,13 +14,13 @@ public class DTSAgent {
 	private List<Workspace> workspaces;
 	
 	public void run(){
-		fin = FinSocket.open();
+		//TODO fin = FinSocket.open();
 		
 		if(fin.register("DTS - UFU POC")) { //Register a new DTS (any other DTS can deny this request)
 			if(fin.join("DTS")){ //JOIN in the DTS workspace. If it doesn't exists, just create the workspace as owner
 				while(true){
 					Message msg = fin.read();
-					if(msg != null || !msg.getPayload().isEmpty()){
+					if(msg != null){//TODO || !msg.getPayload().isEmpty()){
 						/*
 						 * TODO Create a parser
 						 */
